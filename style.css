@@ -166,19 +166,62 @@ body{
     outline: 2px solid grey;
 }
 
-.categories{
-    display: none;
+/* Carousel Box */
+
+.carousel-box{
+    max-width:900px;
+    height:200px;
+    margin:10px auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:8px;
+    padding:0px 10px 0px 10px;
 }
 
-.categories-active{
-    min-height:400px;
+.carousel-box-text{
+    width:70%;
+    height:90%;
+    /* background-color: lightcoral; */
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color:#5C093F;
+}
+
+.carousel-box-img{
+    width:20%;
+    height:90%;
+    /* background-color: rgb(59, 155, 76); */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.carousel-box-img img{
+    height:100%;
+    /* width:50%; */
+}
+
+
+/* Categories */
+
+.categories{
+    /* background-color: red; */
+    min-height: 400px;
     max-width: 1180px;
-    margin:10px auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.categories-active{
+    display: none;
 }
 
 .category{
@@ -243,16 +286,18 @@ body{
     margin: 0 auto;
     border-radius:10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    /* background-color: grey; */
 }
 
 .vip-ad{
     height:280px;
     width:220px;
     background-color: white;
-    margin-top:20px;
+    /* margin-top:20px; */
+    margin:10px;
     border-radius:8px;
     display: flex;
     flex-direction: column;
@@ -325,81 +370,6 @@ body{
     padding-left:10px;
 }
 
-/* Ads- box */
-
-.ads-box{
-    max-width:1220px;
-    min-height:320px;
-    margin: 20px auto;
-    /* border:2px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.ad{
-    height:280px;
-    width:220px;
-    background-color: white;
-    margin-top:20px;
-    margin-left:20px;
-    border-radius:8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border:2px solid lightgray;
-    transition: 0.3s;
-}
-
-.ad:hover{
-    box-shadow: 0px 0px 6px 1px grey;
-    transition: 0.3s;
-}
-
-.ad-img{
-    height:190px;
-    width:100%;
-    border-radius:8px;
-}
-
-.ad-img img{
-    width:100%;
-    height:100%;
-    border-radius:6px;
-    object-fit: cover;
-}
-
-.ad-price{
-    width:98%;
-    height:26px;
-    margin-top:2px;
-    padding-left:4px;
-    font-style: italic;
-}
-
-.ad-name{
-    width:98%;
-    height:40px;
-    padding-left:4px;
-    padding-right:4px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top:6px;
-}
-
-.ad-footer{
-    width:94%;
-    height:20px;
-    font-size:12px;
-}
-
-.ad-date{
-    padding-left:10px;
-}
-
 /* Footer */
 
 footer{
@@ -410,6 +380,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top:20px;
 }
 
 
@@ -456,9 +427,28 @@ footer{
         height:50px;
         width:70px;
     }
+    .carousel-box{
+        max-width:390px;
+        height:160px;
+    }
+    .carousel-box-text{
+        width:60%
+    }
+    .carousel-box-text h2{
+        font-size:16px;
+        padding-left:10px;
+    }
+    .carousel-box-img{
+        width:35%;
+    }
+    .carousel-box-img img{
+        height:60%;
+        padding-right:10px;
+    }
 }
 
 @media (max-width:525px){
+   
     .category{
         height:100px;
         width:170px;
@@ -466,8 +456,18 @@ footer{
     } 
     .category-img{
         width:60px;
-    } 
+    }  
+
+    .categories {
+        display: none;
+    }
+
+    .categories.categories-active {
+        display: flex;
+    }
+    
 }
+
 
 @media (max-width:470px){
     .vip-ads-box{
@@ -476,13 +476,7 @@ footer{
     .vip-ad{
         height:220px;
         width:180px;
+        margin:6px
     }
-    .ads-box{
-        max-width:390px;
-    }
-    .ad{
-        height:220px;
-        width:180px;
-        margin-left:8px;
-    }
+
 }
